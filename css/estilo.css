@@ -19,7 +19,7 @@ body,td,th {
 	border: none;
 	color: #fff;
 	padding: 10px;
-	width: 200px;
+	width: 180px;
 	text-align: center;
 	transition-duration: 0.4s;
 	overflow: hidden;
@@ -53,7 +53,7 @@ body,td,th {
 	outline:0;
 }
 #container {
-	width: 720px;
+	width: 740px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -62,6 +62,9 @@ h1 {
 	margin: 0px;
 	background-color: #574C38;
 	padding-left: 5px;
+	border-radius: 4px;
+}
+iframe {
 	border-radius: 4px;
 }
 li {
