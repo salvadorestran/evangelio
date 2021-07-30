@@ -34,6 +34,8 @@ function GeneraCitas() {
 };
 
 function GeneraNumeros() {
+  var pdfs = document.getElementById("pdfs");
+  pdfs.style.display = "none";
   if (!miVar) {
     miVar = setInterval(NuevoNumero, 40);
   }  
@@ -47,6 +49,32 @@ function NuevoNumero() {
 function Parada() {
   clearInterval(miVar);
   miVar=null;
+  var pdfs = document.getElementById("pdfs");
+  pdfs.style.display = "block";
+};
+
+function VerMateo() {
+  var visorpdfs = document.getElementsByTagName("iframe");
+  //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Mateo.pdf&embedded=true");
+  visorpdfs[0].setAttribute("src", "mateo.html");
+};
+
+function VerMarcos() {
+  var visorpdfs = document.getElementsByTagName("iframe");
+  //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Marcos.pdf&embedded=true");
+  visorpdfs[0].setAttribute("src", "marcos.html");
+};
+
+function VerLucas() {
+  var visorpdfs = document.getElementsByTagName("iframe");
+  //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Lucas.pdf&embedded=true");
+  visorpdfs[0].setAttribute("src", "lucas.html");
+};
+
+function VerJuan() {
+  var visorpdfs = document.getElementsByTagName("iframe");
+  //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Juan.pdf&embedded=true");
+  visorpdfs[0].setAttribute("src", "juan.html");
 };
 
 window.addEventListener("load", GeneraCitas, false);
