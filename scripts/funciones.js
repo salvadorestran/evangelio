@@ -50,6 +50,16 @@ function Parada() {
   clearInterval(miVar);
   miVar=null;
   var pdfs = document.getElementById("pdfs");
+  var cita = document.getElementById("evangelio").innerHTML;
+  if (cita.startsWith("Marcos")) {
+    VerMarcos();
+  } else if (cita.startsWith("Lucas")) {
+    VerLucas();
+  } else if (cita.startsWith("Juan")) {
+    VerJuan();
+  } else {
+    VerMateo();
+  };
   pdfs.style.display = "block";
 };
 
