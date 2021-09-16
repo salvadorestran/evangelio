@@ -1,4 +1,4 @@
 # evangelio
 Citas del Evangelio al azar
-Versión 1.0
+Versión 1.1
 
