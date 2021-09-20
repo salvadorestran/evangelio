@@ -50,16 +50,60 @@ function Parada() {
   clearInterval(miVar);
   miVar=null;
   var pdfs = document.getElementById("pdfs");
+  var visorpdfs = document.getElementsByTagName("iframe");
   var cita = document.getElementById("evangelio").innerHTML;
-  if (cita.startsWith("Marcos")) {
-    VerMarcos();
+  if (cita.startsWith("Mateo")) {
+    cita = cita.replace("Mateo ","");
+    cita = cita.replace(",",".");
+    if (cita < 10) {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "mateo.html#v0"+cita;
+    } else {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "mateo.html#v"+cita;
+    };
+  } else if (cita.startsWith("Marcos")) {
+    cita = cita.replace("Marcos ","");
+    cita = cita.replace(",",".");
+    if (cita < 10) {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "marcos.html#v0"+cita;
+    } else {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "marcos.html#v"+cita;
+    };
   } else if (cita.startsWith("Lucas")) {
-    VerLucas();
+    cita = cita.replace("Lucas ","");
+    cita = cita.replace(",",".");
+    if (cita < 10) {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "lucas.html#v0"+cita;
+    } else {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "lucas.html#v"+cita;
+    };
   } else if (cita.startsWith("Juan")) {
-    VerJuan();
+    cita = cita.replace("Juan ","");
+    cita = cita.replace(",",".");
+    if (cita < 10) {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "juan.html#v0"+cita;
+    } else {
+      cita = cita.toString();
+      cita = cita.replace(".","");
+      cita = "juan.html#v"+cita;
+    };
   } else {
-    VerMateo();
+    cita = "mateo.html";
   };
+  visorpdfs[0].setAttribute("src", cita);
   pdfs.style.display = "block";
 };
 
