@@ -2,6 +2,8 @@
 
 var citas = [];
 
+var pdfs = document.getElementById("pdfs");
+
 var visorpdfs = document.getElementsByTagName("iframe");
 
 var mt = ["Mateo ", 25, 23, 17, 25, 48, 34, 29, 34, 38, 42, 30, 50, 58, 36, 39, 28, 27, 35, 30, 34, 46, 46, 39, 51, 46, 75, 66, 20];
@@ -36,7 +38,6 @@ function GeneraCitas() {
 };
 
 function GeneraNumeros() {
-  var pdfs = document.getElementById("pdfs");
   pdfs.style.display = "none";
   visorpdfs[0].setAttribute("src", "");
   if (!miVar) {
@@ -50,7 +51,6 @@ function NuevoNumero() {
 };
 
 function Parada() {
-  var pdfs = document.getElementById("pdfs");
   clearInterval(miVar);
   miVar=null;
   var cita = document.getElementById("evangelio").innerHTML;
