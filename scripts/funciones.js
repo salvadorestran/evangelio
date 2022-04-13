@@ -35,9 +35,7 @@ function GeneraCitas() {
 
 function GeneraNumeros() {
   var pdfs = document.getElementById("pdfs");
-  var visorpdfs = document.getElementsByTagName("iframe");
   pdfs.style.display = "none";
-  visorpdfs[0].setAttribute("src", "");
   if (!miVar) {
     miVar = setInterval(NuevoNumero, 40);
   }  
