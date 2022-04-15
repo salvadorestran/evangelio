@@ -1,4 +1,4 @@
-﻿var miVar=null;
+var miVar=null;
 
 var citas = [];
 
@@ -9,6 +9,10 @@ var mc = ["Marcos ", 45, 28, 35, 41, 43, 56, 37, 38, 50, 52, 33, 44, 37, 72, 47,
 var lc = ["Lucas ", 80, 52, 38, 44, 39, 49, 50, 56, 62, 42, 54, 59, 35, 35, 32, 31, 37, 43, 48, 47, 38, 71, 56, 53];
 
 var jn = ["Juan ", 51, 25, 36, 54, 47, 71, 53, 59, 41, 42, 57, 50, 38, 31, 27, 33, 26, 40, 42, 31, 25];
+
+var pdfs = document.getElementById("pdfs");
+
+var visorpdfs = document.getElementsByTagName("iframe");
 
 function GeneraCitas() {
   for (var i=1; i<mt.length; i++) {
@@ -34,8 +38,7 @@ function GeneraCitas() {
 };
 
 function GeneraNumeros() {
-  var pdfs = document.getElementById("pdfs");
-  pdfs.style.display = "none";
+  visorpdfs[0].setAttribute("src", "");
   if (!miVar) {
     miVar = setInterval(NuevoNumero, 40);
   }  
@@ -49,8 +52,6 @@ function NuevoNumero() {
 function Parada() {
   clearInterval(miVar);
   miVar=null;
-  var pdfs = document.getElementById("pdfs");
-  var visorpdfs = document.getElementsByTagName("iframe");
   var cita = document.getElementById("evangelio").innerHTML;
   if (cita.startsWith("Mateo")) {
     cita = cita.replace("Mateo ","");
@@ -104,29 +105,24 @@ function Parada() {
     cita = "mateo.html";
   };
   visorpdfs[0].setAttribute("src", cita);
-  pdfs.style.display = "block";
 };
 
 function VerMateo() {
-  var visorpdfs = document.getElementsByTagName("iframe");
   //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Mateo.pdf&embedded=true");
   visorpdfs[0].setAttribute("src", "mateo.html");
 };
 
 function VerMarcos() {
-  var visorpdfs = document.getElementsByTagName("iframe");
   //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Marcos.pdf&embedded=true");
   visorpdfs[0].setAttribute("src", "marcos.html");
 };
 
 function VerLucas() {
-  var visorpdfs = document.getElementsByTagName("iframe");
   //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Lucas.pdf&embedded=true");
   visorpdfs[0].setAttribute("src", "lucas.html");
 };
 
 function VerJuan() {
-  var visorpdfs = document.getElementsByTagName("iframe");
   //visorpdfs[0].setAttribute("src", "https://docs.google.com/viewerng/viewer?url=https://salvadorestran.github.io/evangelio/Juan.pdf&embedded=true");
   visorpdfs[0].setAttribute("src", "juan.html");
 };
